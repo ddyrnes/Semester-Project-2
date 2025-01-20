@@ -1,4 +1,4 @@
-# Auction Website
+# Noroff Auction House Website
 
 ## Overview
 **Work in progress: Estimated Completion Date:** February 5, 2025
