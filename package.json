@@ -13,11 +13,12 @@
     "@eslint/js": "^9.18.0",
     "eslint": "^9.18.0",
     "globals": "^15.14.0",
+    "lint-staged": "^15.4.1",
     "prettier": "^3.4.2"
   },
   "lint-staged": {
     "*.js": [
-      "npx prettier . --write",
+      "prettier --write",
       "eslint --fix"
     ],
     "*.html": [
@@ -26,5 +27,5 @@
     "*.scss": [
       "prettier --write"
     ]
-  },
+  }
 }
