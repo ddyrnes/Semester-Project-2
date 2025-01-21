@@ -25,6 +25,10 @@ A front-end project for an **auction website**, built with **HTML, Tailwind CSS,
    ```sh
    npm install
    ```
+3. Build Tailwind CSS:
+   ```sh
+   npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch
+   ```
 
 ## Author
 **Daniel Dyrnes**
