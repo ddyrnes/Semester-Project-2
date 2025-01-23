@@ -7,9 +7,16 @@
   html {
     @apply text-primaryText;
     @apply font-sans;
+    @apply bg-primaryBackground;
   }
   h1 {
     @apply text-[32px] font-black;
+  }
+  h2 {
+    @apply text-[24px] font-extrabold;
+  }
+  h3 {
+    @apply text-[18px] font-bold;
   }
 
   button {
