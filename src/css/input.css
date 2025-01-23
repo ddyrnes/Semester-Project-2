@@ -1,19 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @layer base {
-    html {
-      @apply text-primaryText;
-      @apply font-sans;
-    }
-    h1 {
-        @apply text-[32px] font-black;
-      }
-    
-    button {
-        @apply text-[18px] font-bold;
-      }
+  html {
+    @apply text-primaryText;
+    @apply font-sans;
   }
+  h1 {
+    @apply text-[32px] font-black;
+  }
+
+  button {
+    @apply text-[18px] font-bold;
+  }
+}
