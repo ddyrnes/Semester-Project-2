@@ -11,6 +11,9 @@ module.exports = {
         primaryText: "#FAFAFA", // Primary Text Color
         dark: "#403D3D", // Dark text color for readability on bright backgrounds
       },
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"], // Set Roboto as the default font for everything
+      },
     },
   },
   plugins: [],
