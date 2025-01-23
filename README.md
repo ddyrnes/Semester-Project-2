@@ -29,7 +29,7 @@ A front-end project for an **auction website**, built with **HTML, Tailwind CSS,
    ```sh
    npm start
    ```
-   # This will watch for file changes and automatically rebuild Tailwind when you save a file
+   ### This will watch for file changes and automatically rebuild Tailwind when you save a file
 
 ## Author
 **Daniel Dyrnes**
