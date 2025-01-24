@@ -9,17 +9,38 @@
     @apply font-sans;
     @apply bg-primaryBackground;
   }
+  body {
+    @apply text-body font-medium;
+  }
+
   h1 {
-    @apply text-[32px] font-black;
+    @apply text-h1 font-black;
   }
+
   h2 {
-    @apply text-[24px] font-extrabold;
+    @apply text-h2 font-extrabold;
   }
-  h3 {
-    @apply text-[18px] font-bold;
+
+  .price-date {
+    @apply text-priceDate font-extrabold;
   }
 
   button {
-    @apply text-[18px] font-bold;
+    @apply text-button font-bold;
+  }
+
+  a {
+    @apply text-menu font-semibold;
+  }
+
+  label {
+    @apply text-label font-normal;
+  }
+
+  input[type="search"] {
+    @apply text-search font-normal;
+  }
+  .container {
+    @apply max-w-[1200px] mx-auto px-6;
   }
 }
