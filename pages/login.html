@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <title>Welcome To Auction House</title>
+  </head>
+  <body class="bg-background flex flex-col w-screen align-middle">
+    <nav class="bg-dark p-[16px]">
+      <div class="flex flex-row justify-between container">
+        <div>
+          <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
+        </div>
+        <div>
+          <p class="tag">Total Balance</p>
+          <p class="number">$1331</p>
+        </div>
+        <div class="flex space-x-6 p-y-[8px] f">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+            <p>Home</p>
+          </a>
+
+          <a href="/auctions" class="flex items-center space-x-2">
+            <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+            <p>Auctions</p>
+          </a>
+
+          <a href="/register" class="flex items-center space-x-2">
+            <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+            <p>Register</p>
+          </a>
+
+          <a href="/login" class="flex items-center space-x-2">
+            <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+            <p>Login</p>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="flex gap-[4px] p-8">
+        <img src="/Icons/backArrow.png" alt="Go Back Arrow" class="h-[20px]" />
+        <p class="text-dark links underline">Back To Home Page</p>
+      </div>
+      <section>
+        <div class="w-full h-[500px] md:w-[600px] mx-auto bg-primaryText text-dark flex flex-col p-[80px] items-center">
+          <div class="w-[260px] mb-6">
+            <h1>Login</h1>
+          </div>
+          <form class="flex flex-col h-full justify-between">
+            <!-- Email Field -->
+            <input
+              class="rounded-[2px]"
+              type="email"
+              id="email"
+              name="email"
+              required
+              pattern="^[a-zA-Z0-9._%+-]+@stud\.noroff\.no$"
+              placeholder="yourname@stud.noroff.no" />
+            <!-- Username Field -->
+            <input type="text" id="username" name="username" required placeholder="Enter username" />
+
+            <!-- Password Field -->
+            <input type="password" id="password" name="password" required placeholder="Enter password" />
+
+            <div>
+              <button
+                type="submit"
+                class="flex w-[260px] px-[44px] py-[6px] justify-center items-center gap-[10px] rounded-[2px] bg-primary text-primaryText shadow-md">
+                Register
+              </button>
+              <div class="flex items-center w-full gap-2">
+                <hr class="flex-1 border-gray-300" />
+                <p class="whitespace-nowrap">or</p>
+                <hr class="flex-1 border-gray-300" />
+              </div>
+              <a
+                href="/login"
+                class="flex w-[260px] px-[44px] py-[6px] justify-center items-center gap-[10px] border border-primary rounded-[2px] text-dark shadow-md ctaButton">
+                Login
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

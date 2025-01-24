@@ -27,7 +27,8 @@
     @apply text-priceDate font-bold;
   }
 
-  button {
+  button,
+  .ctaButton {
     @apply text-button font-bold;
   }
 
@@ -41,8 +42,8 @@
     @apply text-label font-normal;
   }
 
-  input[type="search"] {
-    @apply text-search font-normal;
+  input {
+    @apply text-search font-normal rounded-[2px] h-[30px] w-[260px] p-2 bg-input;
   }
   .container {
     @apply max-w-[1200px] mx-auto px-6;
