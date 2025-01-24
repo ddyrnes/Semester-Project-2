@@ -20,9 +20,11 @@
   h2 {
     @apply text-h2 font-extrabold;
   }
-
-  .price-date {
-    @apply text-priceDate font-extrabold;
+  h3 {
+    @apply text-h3 font-extrabold;
+  }
+  .number {
+    @apply text-priceDate font-bold;
   }
 
   button {
@@ -33,7 +35,8 @@
     @apply text-menu font-semibold;
   }
 
-  label {
+  label,
+  .tag {
     @apply text-label font-normal;
   }
 

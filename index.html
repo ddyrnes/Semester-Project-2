@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="./src/css/output.css" />
     <title>Welcome To Auction House</title>
   </head>
-  <body class="bg-background">
+  <body class="bg-background flex flex-col w-screen align-middle">
     <nav class="bg-dark p-[16px]">
       <div class="flex flex-row justify-between container">
         <div>
           <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
         </div>
-        <div class="">
-          <p>Total Balance</p>
-          <p>$1331</p>
+        <div>
+          <p class="tag">Total Balance</p>
+          <p class="number">$1331</p>
         </div>
         <div class="flex space-x-6 p-y-[8px] f">
           <a href="/" class="flex items-center space-x-2">
@@ -73,50 +73,33 @@
       </section>
       <section class="bg-background py-[80px]">
         <h2 class="text-dark">Auctions Ending Soon</h2>
-        <div class="flex">
-          <div class="text-dark">
-            <img src="/Images/background.png" alt="Example" class="w-[300px] l-[300px]" />
-            <h3>Example</h3>
-            <div>
-              <p>Seller</p>
-              <div class="flex">
-                <img src="/Icons/User.png" alt="Example" />
-                <p>Username</p>
+        <div class="flex rounded-[2px] text-dark gap-2">
+          <div>
+            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover" />
+            <div class="p-4">
+              <h3>Example Item Description</h3>
+              <div>
+                <p class="tag">Seller</p>
+                <div class="flex gap-1">
+                  <img src="/Icons/User.png" alt="Example" class="w-6 h-6" />
+                  <p class="number">Username</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <p>Current Bid:</p>
-              <p>$1119.00</p>
-            </div>
-            <div>
-              <p>Auction ends in:</p>
-              <p>0d 1h 12m</p>
-            </div>
-          </div>
-          <div class="text-dark">
-            <img src="/Images/background.png" alt="Example" class="w-[300px] l-[300px]" />
-            <h3>Example</h3>
-            <div>
-              <p>Seller</p>
-              <div class="flex">
-                <img src="/Icons/User.png" alt="Example" />
-                <p>Username</p>
+              <div>
+                <p class="tag">Current Bid:</p>
+                <p class="number">$1119.00</p>
               </div>
-            </div>
-            <div>
-              <p>Current Bid:</p>
-              <p>$1119.00</p>
-            </div>
-            <div>
-              <p>Auction ends in:</p>
-              <p>0d 1h 12m</p>
+              <div>
+                <p class="tag">Auction ends in:</p>
+                <p class="number">0d 1h 12m</p>
+              </div>
+              <button
+                class="flex w-min sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] bg-primary text-primaryText">
+                <p>Browse All Auctions</p>
+              </button>
             </div>
           </div>
         </div>
-        <button
-          class="flex w-min sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] bg-primary">
-          <p>Browse All Auctions</p>
-        </button>
       </section>
     </main>
     <footer class="bg-dark">
