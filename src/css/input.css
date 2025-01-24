@@ -31,7 +31,8 @@
     @apply text-button font-bold;
   }
 
-  a {
+  a,
+  .links {
     @apply text-menu font-semibold;
   }
 
