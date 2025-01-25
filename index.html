@@ -7,7 +7,7 @@
     <title>Welcome To Auction House</title>
   </head>
   <body class="bg-background flex flex-col w-screen align-middle">
-    <nav class="bg-dark p-[16px]">
+    <!-- <nav class="bg-dark p-[16px]">
       <div class="flex flex-row justify-between container">
         <div>
           <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
@@ -38,12 +38,74 @@
           </a>
         </div>
       </div>
+    </nav> -->
+    <nav class="bg-dark py-[16px] px-[24px]">
+      <div class="flex justify-between items-center max-w-[1440px] mx-auto h-[40px]">
+        <!-- Logo -->
+        <div class="h-full flex-1">
+          <img src="/Icons/logo.png" alt="Auction House Icon" class="h-full w-auto object-contain" />
+        </div>
+
+        <!-- Total Balance -->
+        <div class="hidden sm:flex flex-col md:flex-1 items-center justify-center">
+          <div>
+            <p class="tag">Total Balance</p>
+            <p class="number">$1331</p>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden xl:flex space-x-2 flex-1 justify-end">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+            <p>Home</p>
+          </a>
+          <a href="/auctions" class="flex items-center space-x-2">
+            <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+            <p>Auctions</p>
+          </a>
+          <a href="/register" class="flex items-center space-x-2">
+            <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+            <p>Register</p>
+          </a>
+          <a href="/login" class="flex items-center space-x-2">
+            <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+            <p>Login</p>
+          </a>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button id="hamburgerBtn" class="xl:hidden flex-1">
+          <img src="/Icons/hamburger.png" alt="Menu Icon" class="w-8 h-8 ml-auto" />
+        </button>
+      </div>
+
+      <!-- Dropdown Menu -->
+      <div id="mobileMenu" class="hidden xl:hidden flex-col space-y-2 bg-dark p-4">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+          <p>Home</p>
+        </a>
+        <a href="/auctions" class="flex items-center space-x-2">
+          <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+          <p>Auctions</p>
+        </a>
+        <a href="/register" class="flex items-center space-x-2">
+          <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+          <p>Register</p>
+        </a>
+        <a href="/login" class="flex items-center space-x-2">
+          <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+          <p>Login</p>
+        </a>
+      </div>
     </nav>
+
     <main>
       <section
         class="flex items-center justify-center w-full h-screen bg-[url(/images/background.png)] bg-cover bg-center">
         <div
-          class="flex flex-col gap-[40px] lg:gap-[80px] w-full max-w-[900px] h-screen sm:h-fit bg-dark bg-opacity-90 p-[30px] lg:p-[60px] rounded-[2px]">
+          class="flex flex-col gap-[40px] lg:gap-[80px] w-full max-w-[900px] h-fit bg-dark bg-opacity-90 p-[30px] lg:p-[60px] rounded-[2px]">
           <div>
             <p>Welcome to</p>
             <img src="/Icons/logo.png" alt="Auction House Icon" class="w-[200px] md:w-[300px]" />
