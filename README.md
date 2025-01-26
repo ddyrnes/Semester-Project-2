@@ -15,7 +15,9 @@ A front-end project for an **auction website**, built with **HTML, Tailwind CSS,
 
 ## Tech Stack
 
-- **HTML, Tailwind CSS, JavaScript**
+- **HTML**
+- **Tailwind** CSS@3.4.17
+- **JavaScript**
 - **Node.js & npm** (for development tools)
 - **Husky & ESLint** (code quality and Git hooks)
 
