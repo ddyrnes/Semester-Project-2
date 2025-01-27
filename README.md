@@ -28,6 +28,9 @@ A front-end project for an **auction website**, built with **HTML, Tailwind CSS,
 
 ```sh
 git clone https://github.com/yourusername/auction-website.git
+```
+
+```sh
 cd auction-website
 ```
 
