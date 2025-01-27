@@ -9,7 +9,9 @@ if (!API_KEY) {
 }
 console.log("My API_KEY:", API_KEY);
 
-// Testing login & register. Will move functions into seperate files later
+// Testing login & register. Will move functions into seperate files + cleanup later
+// Testing login & register. Will move functions into seperate files + cleanup later
+// Testing login & register. Will move functions into seperate files + cleanup later
 
 export async function getAuctionListings() {
   try {
@@ -27,13 +29,24 @@ export async function getAuctionListings() {
       throw new Error(data.message || "Failed to fetch listings");
     }
 
-    console.log("✅ Auction Listings:", data);
+    // console.log("✅ Auction Listings:", data);
+    // console.log(`Console Log Testing ${data}`);
+    // console.log(data[2]);
+    // data.array.forEach((data) => {
+    //   console.log(`Each ID ${data.id}`);
+    // });
+    const auctionIds = data.map((data) => data.id);
+    console.log("Auction IDs:", auctionIds);
+    data.forEach((data, index) => {
+      console.log(`Auction ${index + 1} ID:`, data.id);
+    });
+
     return data;
   } catch (error) {
     console.error("❌ Error fetching listings:", error);
   }
 }
-// getAuctionListings();
+getAuctionListings();
 
 const loginData = {
   email: "dandyr77157@stud.noroff.no",
@@ -56,7 +69,6 @@ export async function loginUser(loginData) {
     // console.log("📦 Full Response Data:", data); // Logs the full parsed response body
     const token = data.accessToken;
     console.log(`This is the accessToken ${token}`);
-
     if (!response.ok) {
       throw new Error(data.errors ? data.errors[0].message : "Login failed");
     }
