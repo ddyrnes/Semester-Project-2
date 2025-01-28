@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <script type="module" src="/src/js/pages/register.js"></script>
+    <title>Register | Auction House</title>
+  </head>
+  <body class="bg-background flex flex-col w-screen align-middle">
+    <nav class="bg-dark p-[16px]">
+      <div class="flex flex-row justify-between container">
+        <div>
+          <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
+        </div>
+        <div>
+          <p class="tag">Total Balance</p>
+          <p class="number">$1331</p>
+        </div>
+        <div class="flex space-x-6 p-y-[8px]">
+          <a href="/in" class="flex items-center space-x-2">
+            <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+            <p>Home</p>
+          </a>
+          <a href="/auctions" class="flex items-center space-x-2">
+            <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+            <p>Auctions</p>
+          </a>
+          <a href="/register" class="flex items-center space-x-2">
+            <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+            <p>Register</p>
+          </a>
+          <a href="/pages/login.html" class="flex items-center space-x-2">
+            <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+            <p>Login</p>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="flex gap-[4px] p-8">
+        <img src="/Icons/backArrow.png" alt="Go Back Arrow" class="h-[20px]" />
+        <p class="text-dark links underline">Back To Home Page</p>
+      </div>
+
+      <section>
+        <div class="w-full h-auto md:w-[600px] mx-auto bg-primaryText text-dark flex flex-col p-[80px] items-center">
+          <div class="w-[260px] mb-6">
+            <h1>Register</h1>
+          </div>
+
+          <form class="flex flex-col h-full gap-6 m-4 items-center">
+            <!-- Name Field -->
+            <div class="w-[260px]">
+              <label for="name" class="sr-only">Username</label>
+              <input
+                class="w-[260px] rounded-[2px] p-[10px] border border-gray-300"
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Choose a username"
+                autocomplete="username" />
+            </div>
+
+            <!-- Email Field -->
+            <div class="w-[260px]">
+              <label for="email" class="sr-only">Email</label>
+              <input
+                class="w-[260px] rounded-[2px] p-[10px] border border-gray-300"
+                type="email"
+                id="email"
+                name="email"
+                required
+                pattern="^[a-zA-Z0-9._%+\-]+@stud\.noroff\.no$"
+                placeholder="yourname@stud.noroff.no"
+                autocomplete="email"
+                title="Must be a valid stud.noroff.no email" />
+            </div>
+
+            <!-- Password Field -->
+            <div class="w-[260px]">
+              <label for="password" class="sr-only">Password</label>
+              <input
+                class="w-[260px] rounded-[2px] p-[10px] border border-gray-300"
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Enter password"
+                autocomplete="new-password" />
+            </div>
+
+            <p id="registerError" class="text-red-500 min-h-[50px] w-[260px] text-center break-words"></p>
+
+            <div class="flex flex-col gap-2">
+              <button
+                type="submit"
+                class="w-[260px] px-[44px] py-[10px] flex justify-center items-center gap-[10px] rounded-[2px] bg-primary text-primaryText shadow-md">
+                Register
+              </button>
+
+              <div class="flex items-center w-full gap-2">
+                <hr class="flex-1 border-gray-300" />
+                <p class="whitespace-nowrap">or</p>
+                <hr class="flex-1 border-gray-300" />
+              </div>
+
+              <a
+                href="/login"
+                class="w-[260px] px-[44px] py-[10px] flex justify-center items-center gap-[10px] border border-primary rounded-[2px] text-dark shadow-md ctaButton">
+                Login
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

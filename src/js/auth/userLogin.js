@@ -1,6 +1,6 @@
 import { API_BASE_URL } from "../api/apiEndpoints.js";
 
-// Helper function to show error messages
+// Function to show error messages
 function showError(message) {
   const errorElement = document.querySelector("#loginError");
   if (errorElement) {
@@ -9,7 +9,7 @@ function showError(message) {
   }
 }
 
-// Helper function to store user data
+// Function to store user data
 function storeUserData(data) {
   localStorage.setItem("accessToken", data.accessToken);
   localStorage.setItem("user", JSON.stringify(data));
@@ -24,7 +24,7 @@ function validateLoginInputs(email, password) {
   return true;
 }
 
-// Main Login Function
+// Login Function
 export async function handleLogin(event) {
   event.preventDefault(); // Prevent default form submission
 
@@ -39,7 +39,7 @@ export async function handleLogin(event) {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  // Validate inputs before making API call
+  // Validating inputs before API call
   if (!validateLoginInputs(email, password)) return;
 
   try {
@@ -57,14 +57,14 @@ export async function handleLogin(event) {
       throw new Error(data.errors ? data.errors[0].message : "Invalid email or password.");
     }
 
-    console.log("✅ Login successful:", data);
+    console.log("Login successful:", data);
     showError(""); // Hide error message if login is successful
     storeUserData(data); // Store user data
 
     // Redirect to profile page
     window.location.href = "/pages/profile.html";
   } catch (error) {
-    console.error("❌ Error logging in:", error.message);
+    console.error("Error logging in:", error.message);
     showError(error.message);
   }
 }
