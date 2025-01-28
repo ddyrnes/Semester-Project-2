@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../src/css/output.css" />
+    <script type="module" src="/src/js/pages/login.js"></script>
     <title>Welcome To Auction House</title>
   </head>
   <body class="bg-background flex flex-col w-screen align-middle">
@@ -49,37 +50,54 @@
           <div class="w-[260px] mb-6">
             <h1>Login</h1>
           </div>
-          <form class="flex flex-col h-full justify-between">
+
+          <form class="flex flex-col h-full gap-6 m-4 items-center">
             <!-- Email Field -->
-            <input
-              class="rounded-[2px]"
-              type="email"
-              id="email"
-              name="email"
-              required
-              pattern="^[a-zA-Z0-9._%+-]+@stud\.noroff\.no$"
-              placeholder="yourname@stud.noroff.no" />
-            <!-- Username Field -->
-            <input type="text" id="username" name="username" required placeholder="Enter username" />
+            <div class="w-[260px]">
+              <label for="email" class="sr-only">Email</label>
+              <input
+                class="w-[260px] rounded-[2px] p-[10px] border border-gray-300"
+                type="email"
+                id="email"
+                name="email"
+                required
+                pattern="^[a-zA-Z0-9._%+\-]+@stud\.noroff\.no$"
+                placeholder="yourname@stud.noroff.no"
+                autocomplete="email"
+                title="Please enter a valid stud.noroff.no email address" />
+            </div>
 
             <!-- Password Field -->
-            <input type="password" id="password" name="password" required placeholder="Enter password" />
+            <div class="w-[260px]">
+              <label for="password" class="sr-only">Password</label>
+              <input
+                class="w-[260px] rounded-[2px] p-[10px] border border-gray-300"
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Enter password"
+                autocomplete="current-password" />
+            </div>
 
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 mt-8">
               <button
                 type="submit"
-                class="flex w-[260px] px-[44px] py-[6px] justify-center items-center gap-[10px] rounded-[2px] bg-primary text-primaryText shadow-md">
-                Register
+                class="w-[260px] px-[44px] py-[10px] flex justify-center items-center gap-[10px] rounded-[2px] bg-primary text-primaryText shadow-md">
+                Login
               </button>
+              <p id="loginError" class="hidden text-red-500"></p>
+
               <div class="flex items-center w-full gap-2">
                 <hr class="flex-1 border-gray-300" />
                 <p class="whitespace-nowrap">or</p>
                 <hr class="flex-1 border-gray-300" />
               </div>
+
               <a
-                href="/login"
-                class="flex w-[260px] px-[44px] py-[6px] justify-center items-center gap-[10px] border border-primary rounded-[2px] text-dark shadow-md ctaButton">
-                Login
+                href="/register"
+                class="w-[260px] px-[44px] py-[10px] flex justify-center items-center gap-[10px] border border-primary rounded-[2px] text-dark shadow-md ctaButton">
+                Register
               </a>
             </div>
           </form>
