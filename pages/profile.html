@@ -4,37 +4,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../src/css/output.css" />
-    <title>Profile Page</title>
+    <script type="module" src="/src/js/pages/profile.js"></script>
+    <title>My Profile - Auction House</title>
   </head>
-  <body>
-    <nav></nav>
+  <body class="bg-background flex flex-col w-screen align-middle">
+    <!-- Navbar -->
+    <nav class="bg-dark p-[16px]">
+      <div class="flex flex-row justify-between container">
+        <div>
+          <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
+        </div>
+        <div>
+          <p class="tag">Total Balance</p>
+          <p class="number">$1331</p>
+        </div>
+        <div class="flex space-x-6 py-[8px]">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+            <p>Home</p>
+          </a>
+          <a href="/auctions" class="flex items-center space-x-2">
+            <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+            <p>Auctions</p>
+          </a>
+          <a href="/register" class="flex items-center space-x-2">
+            <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+            <p>Register</p>
+          </a>
+          <a href="/login" class="flex items-center space-x-2">
+            <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+            <p>Login</p>
+          </a>
+        </div>
+      </div>
+    </nav>
+
     <main>
-      <section>
-        <div
-          class="max-w-[980px] mx-auto flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center gap-2 p-5 bg-primaryText rounded-md w-full">
+      <!-- Back Button -->
+      <div class="flex gap-[4px] p-8">
+        <img src="/Icons/backArrow.png" alt="Go Back Arrow" class="h-[20px]" />
+        <p class="text-dark links underline">Back To Home Page</p>
+      </div>
+
+      <section class="w-full max-w-[1000px] mx-auto text-dark flex flex-col p-[10px] md:p-[80px] items-center">
+        <!-- Sub-navbar -->
+        <div class="flex flex-col sm:flex-row justify-between w-full border-b mb-12 p-0 sm:p-6 gap-1 bg-primaryText">
           <button
-            class="w-full md:w-[200px] h-[30px] flex justify-center items-center text-textWhite bg-primary text-sm rounded-[2px]">
+            class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
+            data-tab="profile">
             My Profile
           </button>
           <button
-            class="w-full md:w-[200px] h-[30px] flex justify-center items-center border border-primary bg-primaryText text-dark text-sm rounded-[2px]">
+            class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
+            data-tab="create-auction">
             Create Auction
           </button>
           <button
-            class="w-full md:w-[200px] h-[30px] flex justify-center items-center border border-primary bg-primaryText text-dark text-sm rounded-[2px]">
+            class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
+            data-tab="my-bids">
             My Bids
           </button>
           <button
-            class="w-full md:w-[200px] h-[30px] flex justify-center items-center border border-primary bg-primaryText text-dark text-sm rounded-[2px]">
+            class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
+            data-tab="my-collection">
             My Collection
           </button>
           <button
-            class="w-full md:w-[200px] h-[30px] flex justify-center items-center border border-primary bg-primaryText text-dark text-sm rounded-[2px]">
+            class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
+            data-tab="my-current-auctions">
             My Current Auctions
           </button>
         </div>
+
+        <div id="profile" class="tab-content bg-primaryText w-full p-6 py-12">
+          <div class="w-full text-center mb-6">
+            <div class="flex flex-col items-start w-[300px] mx-auto bg-primaryText">
+              <h1 class="text-2xl font-bold text-dark mb-4">My Profile</h1>
+
+              <div class="w-[300px] h-[300px] bg-gray-200 overflow-hidden flex justify-center items-center">
+                <img id="profileAvatar" src="" alt="Profile Avatar" class="w-full h-full object-cover" />
+              </div>
+
+              <p id="profileUsername" class="text-primary font-bold text-lg mt-4"></p>
+
+              <div class="mt-2">
+                <p class="text-dark text-sm">Total Balance</p>
+                <p id="profileBalance" class="number text-lg font-bold text-left"></p>
+              </div>
+
+              <form id="updateAvatarForm" class="flex flex-col gap-4 w-full mt-6">
+                <input
+                  type="url"
+                  id="avatarUrl"
+                  placeholder="Enter image URL"
+                  class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                  required />
+                <button
+                  type="submit"
+                  class="w-full py-2 bg-primary text-primaryText font-bold hover:opacity-90 transition">
+                  Update Avatar
+                </button>
+              </form>
+              <p id="avatarError" class="text-red-500 text-center hidden"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="create-auction" class="tab-content hidden">
+          <p>Create Auction Form...</p>
+        </div>
+        <div id="my-bids" class="tab-content hidden">
+          <p>My Bids List...</p>
+        </div>
+        <div id="my-collection" class="tab-content hidden">
+          <p>My Collection...</p>
+        </div>
+        <div id="my-current-auctions" class="tab-content hidden">
+          <p>My Current Auctions...</p>
+        </div>
       </section>
     </main>
-    <footer></footer>
   </body>
 </html>

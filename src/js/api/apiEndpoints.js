@@ -28,3 +28,8 @@ export const PROFILES = {
   WINS: (name) => `${API_BASE_URL}/profiles/${name}/wins`,
   SEARCH: (query) => `${API_BASE_URL}/profiles/search?q=${query}`,
 };
+
+// --------------------------------------------------------
+// REDO THESE BEFORE FINAL COMMIT
+// NOT ALL IN USE
+// --------------------------------------------------------

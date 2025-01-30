@@ -30,6 +30,7 @@
   button,
   .ctaButton {
     @apply text-button font-bold;
+    @apply rounded-[2px];
   }
 
   a,
