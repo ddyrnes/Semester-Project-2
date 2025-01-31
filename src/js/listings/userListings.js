@@ -13,9 +13,12 @@ export async function fetchUserListings() {
     });
 
     const data = await response.json();
-
     console.log(`User Listings for ${user.name}:`, data);
   } catch (error) {
+    const accessToken = localStorage.getItem("accessToken");
+    const userJSON = localStorage.getItem("user");
+    console.log(userJSON);
+    console.log("Token:", accessToken);
     console.error("Error fetching user listings:", error.message);
   }
 }

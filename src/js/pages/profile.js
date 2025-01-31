@@ -1,6 +1,7 @@
 import "../modules/profileTabs.js";
 import { fetchProfileData } from "../modules/profile/myProfile/fetchProfile.js";
 import { updateAvatar } from "../modules/profile/myProfile/updateAvatar.js";
+import { handleCreateAuction } from "../modules/profile/createAuction/createAuction.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await fetchProfileData();
@@ -13,8 +14,6 @@ import { fetchUserListings } from "../listings/userListings.js";
 
 fetchAllListings();
 fetchUserListings();
-
-import { handleCreateAuction } from "../modules/profile/createAuction/createAuction.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const createAuctionBtn = document.querySelector("#createAuctionBtn");

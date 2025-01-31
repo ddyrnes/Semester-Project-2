@@ -1,6 +1,7 @@
-import { API_BASE_URL } from "../api/apiEndpoints.js";
+import { AUTH } from "../api/apiEndpoints";
 
 export async function handleRegister() {
+  event.preventDefault();
   const nameInput = document.querySelector("#username");
   const emailInput = document.querySelector("#email");
   const passwordInput = document.querySelector("#password");
@@ -25,7 +26,7 @@ export async function handleRegister() {
   }
 
   try {
-    const response = await fetch(`${API_BASE_URL}/auth/register`, {
+    const response = await fetch(AUTH.REGISTER, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),

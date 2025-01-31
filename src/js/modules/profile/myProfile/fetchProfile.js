@@ -1,6 +1,7 @@
 import { PROFILES } from "../../../api/apiEndpoints.js";
 import { getUserData, updateLocalUserData } from "./storage.js";
-
+const apiKey = import.meta.env.VITE_API_KEY;
+console.log(apiKey);
 // Fetches Profile Data
 export async function fetchProfileData() {
   const userData = getUserData();
@@ -13,7 +14,10 @@ export async function fetchProfileData() {
 
   try {
     const response = await fetch(PROFILES.SINGLE(user.name), {
-      headers: { Authorization: `Bearer ${accessToken}` },
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "X-Noroff-API-Key": apiKey,
+      },
     });
 
     const data = await response.json();
