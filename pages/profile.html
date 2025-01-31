@@ -110,9 +110,66 @@
           </div>
         </div>
 
-        <div id="create-auction" class="tab-content hidden">
-          <p>Create Auction Form...</p>
+        <div id="create-auction" class="tab-content bg-primaryText w-full p-6 py-12 hidden">
+          <div class="w-full text-center mb-6">
+            <div class="flex flex-col items-start w-[300px] mx-auto bg-primaryText">
+              <h1 class="text-2xl font-bold text-dark mb-4">Create Auction</h1>
+
+              <!-- Title Input -->
+              <label for="auctionTitle" class="text-dark text-sm mb-1">Title</label>
+              <input
+                type="text"
+                id="auctionTitle"
+                placeholder="Enter auction title"
+                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                required />
+
+              <!-- Description Input -->
+              <label for="auctionDescription" class="text-dark text-sm mt-4 mb-1">Description</label>
+              <textarea
+                id="auctionDescription"
+                placeholder="Enter auction description"
+                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none resize-none"
+                rows="4"></textarea>
+
+              <!-- Tags Input -->
+              <label for="auctionTags" class="text-dark text-sm mt-4 mb-1">Tags (comma-separated)</label>
+              <input
+                type="text"
+                id="auctionTags"
+                placeholder="e.g. Electronics, Gaming"
+                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+
+              <!-- Image URL Input -->
+              <label for="auctionImage" class="text-dark text-sm mt-4 mb-1">Image URL</label>
+              <input
+                type="url"
+                id="auctionImage"
+                placeholder="Enter image URL"
+                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+
+              <!-- Auction End Date Input -->
+              <label for="auctionEndDate" class="text-dark text-sm mt-4 mb-1">Auction End Date</label>
+              <input
+                type="datetime-local"
+                id="auctionEndDate"
+                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                required />
+
+              <!-- Create Auction Button -->
+              <button
+                type="submit"
+                id="createAuctionBtn"
+                class="w-full mt-6 py-2 bg-primary text-primaryText font-bold hover:opacity-90 transition">
+                Create Auction
+              </button>
+
+              <!-- Error Message -->
+              <p id="auctionError" class="text-red-500 text-center hidden mt-4"></p>
+            </div>
+          </div>
         </div>
+
         <div id="my-bids" class="tab-content hidden">
           <p>My Bids List...</p>
         </div>
