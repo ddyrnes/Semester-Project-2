@@ -48,7 +48,7 @@
 
       <section class="w-full max-w-[1000px] mx-auto text-dark flex flex-col p-[10px] md:p-[80px] items-center">
         <!-- Sub-navbar -->
-        <div class="flex flex-col sm:flex-row justify-between w-full border-b mb-12 p-0 sm:p-6 gap-1 bg-primaryText">
+        <div class="flex flex-col sm:flex-row justify-between w-full border-b mb-6 gap-1 bg-primaryText">
           <button
             class="tab-button flex-1 px-4 py-2 text-dark border-b-2 border-primary hover:border-primary focus:border-primary"
             data-tab="profile">
@@ -111,50 +111,65 @@
         </div>
 
         <div id="create-auction" class="tab-content bg-primaryText w-full p-6 py-12 hidden">
-          <div class="w-full text-center mb-6">
-            <div class="flex flex-col items-start w-[300px] mx-auto bg-primaryText">
+          <div class="w-full text-left mb-6">
+            <div class="flex flex-col items-start w-[300px] mx-auto bg-primaryText gap-2">
               <h1 class="text-2xl font-bold text-dark mb-4">Create Auction</h1>
 
               <!-- Title Input -->
-              <label for="auctionTitle" class="text-dark text-sm mb-1">Title</label>
-              <input
-                type="text"
-                id="auctionTitle"
-                placeholder="Enter auction title"
-                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
-                required />
+              <div class="relative w-full min-h-[100px]">
+                <label for="auctionTitle" class="text-dark text-sm mb-1 block">Title</label>
+                <input
+                  type="text"
+                  id="auctionTitle"
+                  placeholder="Enter auction title"
+                  class="p-2 w-full h-[40px] border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                  required />
+                <p class="auction-error text-red-500 text-sm absolute mt-1 left-0 hidden"></p>
+              </div>
 
-              <!-- Description Input -->
-              <label for="auctionDescription" class="text-dark text-sm mt-4 mb-1">Description</label>
-              <textarea
-                id="auctionDescription"
-                placeholder="Enter auction description"
-                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none resize-none"
-                rows="4"></textarea>
+              <!-- Description Input (Flexible Height) -->
+              <div class="relative w-full">
+                <label for="auctionDescription" class="text-dark text-sm mb-1 block">Description</label>
+                <textarea
+                  id="auctionDescription"
+                  placeholder="Enter auction description"
+                  class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none resize-none"
+                  rows="4"></textarea>
+              </div>
 
               <!-- Tags Input -->
-              <label for="auctionTags" class="text-dark text-sm mt-4 mb-1">Tags (comma-separated)</label>
-              <input
-                type="text"
-                id="auctionTags"
-                placeholder="e.g. Electronics, Gaming"
-                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+              <div class="relative w-full min-h-[100px]">
+                <label for="auctionTags" class="text-dark text-sm mb-1 block">Tags (comma-separated)</label>
+                <input
+                  type="text"
+                  id="auctionTags"
+                  placeholder="e.g. Electronics, Gaming"
+                  class="p-2 w-full h-[40px] border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+              </div>
 
               <!-- Image URL Input -->
-              <label for="auctionImage" class="text-dark text-sm mt-4 mb-1">Image URL</label>
-              <input
-                type="url"
-                id="auctionImage"
-                placeholder="Enter image URL"
-                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+              <div class="relative w-full min-h-[100px]">
+                <label for="auctionImage" class="text-dark text-sm mb-1 block">Image URL</label>
+                <input
+                  type="text"
+                  id="auctionImage"
+                  placeholder="Enter image URL"
+                  class="p-2 w-full h-[40px] border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                  required />
+
+                <p class="auction-error text-red-500 text-sm absolute mt-1 left-0 hidden"></p>
+              </div>
 
               <!-- Auction End Date Input -->
-              <label for="auctionEndDate" class="text-dark text-sm mt-4 mb-1">Auction End Date</label>
-              <input
-                type="datetime-local"
-                id="auctionEndDate"
-                class="p-2 w-full border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
-                required />
+              <div class="relative w-full min-h-[100px]">
+                <label for="auctionEndDate" class="text-dark text-sm mb-1 block">Auction End Date</label>
+                <input
+                  type="datetime-local"
+                  id="auctionEndDate"
+                  class="p-2 w-full h-[40px] border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none"
+                  required />
+                <p class="auction-error text-red-500 text-sm absolute mt-1 left-0 hidden"></p>
+              </div>
 
               <!-- Create Auction Button -->
               <button
@@ -163,9 +178,6 @@
                 class="w-full mt-6 py-2 bg-primary text-primaryText font-bold hover:opacity-90 transition">
                 Create Auction
               </button>
-
-              <!-- Error Message -->
-              <p id="auctionError" class="text-red-500 text-center hidden mt-4"></p>
             </div>
           </div>
         </div>
