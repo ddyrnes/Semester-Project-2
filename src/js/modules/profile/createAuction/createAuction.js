@@ -1,4 +1,6 @@
 import { LISTINGS } from "../../../api/apiEndpoints.js";
+import { getUserData } from "../myProfile/storage";
+import { API_KEY } from "../../../api/api";
 
 export async function handleCreateAuction(event) {
   event.preventDefault();
@@ -46,32 +48,23 @@ export async function handleCreateAuction(event) {
 
   if (hasError) return;
 
-  // Extract and log raw input value
-  const rawEndDate = endDateInput.value;
-  console.log("🕒 Raw Input End Date:", rawEndDate);
-
-  // Try creating a Date object and log it
-  const dateObj = new Date(rawEndDate);
-  console.log("🕒 Parsed Date Object:", dateObj);
-
-  // Validate the Date object before converting
+  // Convert to required format with explicit milliseconds
+  const dateObj = new Date(endDate);
   if (isNaN(dateObj.getTime())) {
     showError(endDateInput, "Invalid date format.");
     return;
   }
-
-  // Convert to required format with explicit milliseconds
   const formattedEndDate = dateObj.toISOString();
   console.log("📅 Converted End Date:", formattedEndDate);
 
-  // ✅ Ensure media follows API specs
+  // Ensure media follows API specs
   const media = imageUrl ? [{ url: imageUrl, alt: `Auction Image ${title}` }] : [];
 
-  const accessToken = localStorage.getItem("accessToken");
-  if (!accessToken) {
-    alert("You must be logged in to create an auction.");
-    return;
-  }
+  // Get user data (includes accessToken)
+  const userData = getUserData();
+  console.log(userData);
+
+  const accessToken = userData.accessToken;
 
   const auctionData = {
     title,
@@ -89,31 +82,37 @@ export async function handleCreateAuction(event) {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
+        "X-Noroff-API-Key": API_KEY,
       },
       body: JSON.stringify(auctionData),
     });
 
     const data = await response.json();
-    console.log("✅ Auction Created Response:", data);
+    console.log("Auction Created Response:", data);
 
-    // **📌 Log Full API Response**
     if (!response.ok) {
-      console.error("❌ Full API Error Response:", data);
+      console.error("Full API Error Response:", data);
       throw new Error(data.errors?.[0]?.message || "Failed to create auction.");
     }
 
     alert("Auction successfully created!");
-    window.location.reload();
+    // window.location.reload();
+    titleInput.value = "";
+    descriptionInput.value = "";
+    tagsInput.value = "";
+    imageUrlInput.value = "";
+    endDateInput.value = "";
   } catch (error) {
-    console.error("❌ Error creating auction:", error.message);
+    console.error("Error creating auction:", error.message);
 
     const fullError = error.response?.errors || error.message;
-    console.error("⚠️ Detailed API Errors:", fullError);
+    console.error("Detailed API Errors:", fullError);
 
     alert(fullError);
   }
 }
 
+/** Show Validation Errors for Inputs */
 function showError(inputElement, message) {
   let errorElement = inputElement.parentNode.querySelector(".auction-error");
   if (!errorElement) {
@@ -125,14 +124,16 @@ function showError(inputElement, message) {
   errorElement.classList.remove("hidden");
 }
 
+/** Validate Image URLs */
 function isValidImageUrl(url) {
-  const parsedUrl = new URL(url);
+  try {
+    const parsedUrl = new URL(url);
+    const validImageExtensions = /\.(jpeg|jpg|gif|png|webp|svg)(\?.*)?$/i;
+    if (validImageExtensions.test(parsedUrl.pathname)) return true;
 
-  // ✅ Allow direct image file extensions
-  const validImageExtensions = /\.(jpeg|jpg|gif|png|webp|svg)(\?.*)?$/i;
-  if (validImageExtensions.test(parsedUrl.pathname)) return true;
-
-  // ✅ Allow trusted image hosts (Unsplash, Freepik, etc.)
-  const allowedDomains = ["unsplash.com", "freepik.com", "imgur.com", "robohash.org"];
-  return allowedDomains.some((domain) => parsedUrl.hostname.includes(domain));
+    const allowedDomains = ["unsplash.com", "freepik.com", "imgur.com", "robohash.org"];
+    return allowedDomains.some((domain) => parsedUrl.hostname.includes(domain));
+  } catch {
+    return false;
+  }
 }

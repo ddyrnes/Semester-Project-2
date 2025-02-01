@@ -16,13 +16,7 @@ if (hasAccessToken()) {
 }
 
 hasAccessToken();
-// function logoutUser() {
-//   localStorage.removeItem("accessToken");
-//   localStorage.removeItem("user"); // If you stored user data separately
-//   // Optionally redirect to login page or home page
-//   window.location.href = "/login.html";
-// }
-// logoutUser();
+
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("form");
   if (loginForm) {

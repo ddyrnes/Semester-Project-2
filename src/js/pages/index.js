@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("accessToken");
 
   if (user && token) {
-    console.log("✅ User is logged in:", user);
-    console.log("🔑 Access Token:", token);
+    console.log("User is logged in:", user);
+    console.log("Access Token:", token);
   } else {
-    console.log("❌ No user logged in.");
+    console.log("No user logged in.");
   }
 });
