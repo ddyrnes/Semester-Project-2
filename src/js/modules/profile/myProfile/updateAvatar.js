@@ -17,12 +17,9 @@ export async function updateAvatar(event) {
   // Get stored user data
   const userData = getUserData();
   if (!userData) return;
-
-  // Destructure username and access token from userData
-  const {
-    data: { name: userName },
-    accessToken,
-  } = userData;
+  // // Destructure username and access token from userData
+  // const {data: { name: userName },accessToken,} = userData;
+  const { name: userName, accessToken } = userData;
 
   // Build the request avatarUpdate as a JSON string
   const avatarUpdate = JSON.stringify({
