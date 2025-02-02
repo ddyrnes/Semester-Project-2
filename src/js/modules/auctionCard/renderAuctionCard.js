@@ -7,9 +7,9 @@ export async function loadAuctionCardTemplate() {
     }
 
     let templateText = await response.text();
-    console.log("Raw Template Text Loaded:", templateText.substring(0, 200));
 
-    // 🚨 Remove any <script> tags that Vite injects
+    // Remove any <script> tags that Vite injects
+    // This was causing problems when running server locally
     templateText = templateText.replace(/<script[^>]*>.*?<\/script>/gi, "").trim();
 
     // Insert the cleaned template into the DOM
@@ -17,9 +17,8 @@ export async function loadAuctionCardTemplate() {
 
     console.log("Template manually inserted into the DOM.");
 
-    // Verify if it's there
-    console.log("🔍 Checking document for #auction-card-template...");
-    console.log("🔍 Template Found:", document.querySelector("#auction-card-template"));
+    // console.log("🔍 Checking document for #auction-card-template...");
+    // console.log("🔍 Template Found:", document.querySelector("#auction-card-template"));
   } catch (error) {
     console.error("❌ Error loading auction card template:", error);
   }

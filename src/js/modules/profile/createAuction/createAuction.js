@@ -1,6 +1,6 @@
 import { LISTINGS } from "../../../api/apiEndpoints.js";
 import { getUserData } from "../myProfile/storage";
-import { API_KEY } from "../../../api/api";
+import { API_KEY } from "../../../api/apiKey.js";
 
 export async function handleCreateAuction(event) {
   event.preventDefault();

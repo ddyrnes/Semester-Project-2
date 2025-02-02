@@ -1,6 +1,6 @@
 import { PROFILES } from "../../../api/apiEndpoints.js";
 import { getUserData, updateLocalUserData } from "./storage.js";
-import { API_KEY } from "../../../api/api.js";
+import { API_KEY } from "../../../api/apiKey.js";
 // console.log(apiKey);
 // Fetches Profile Data
 export async function fetchProfileData() {

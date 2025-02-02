@@ -5,6 +5,8 @@ import { handleCreateAuction } from "../modules/profile/createAuction/createAuct
 import { createAuctionCard } from "../modules/auctionCard/createAuctionCard.js";
 import { loadAuctionCardTemplate } from "../modules/auctionCard/renderAuctionCard.js";
 
+import { fetchListings } from "../api/fetchListings.js";
+
 // ✅ Ensure profile data loads first
 document.addEventListener("DOMContentLoaded", async () => {
   await fetchProfileData();
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // 🔹 Sample auction data (for testing)
+  // Sample auction data (for testing)
   const sampleAuction = {
     title: "Cool NFT",
     description: "Something",
@@ -36,19 +38,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     endsAt: "2025-02-10T15:30:00.000Z",
   };
 
-  // 🔹 Create auction card & insert it into the container
+  // Create auction card & insert it into the container
   const auctionCard = createAuctionCard(sampleAuction);
   if (auctionCard) container.appendChild(auctionCard);
 });
-
-// ✅ Keep existing functionality
-import { fetchAllListings } from "../listings/listings.js";
-import { fetchUserListings } from "../listings/userListings.js";
-
-fetchAllListings();
-fetchUserListings();
 
 const createAuctionBtn = document.querySelector("#createAuctionBtn");
 if (createAuctionBtn) {
   createAuctionBtn.addEventListener("click", handleCreateAuction);
 }
+
+// For testing purposes, will delete before final push
+// For testing purposes, will delete before final push
+// For testing purposes, will delete before final push
+
+const listings = await fetchListings({ type: "all-listings" });
+console.log(listings);
+const myListings = await fetchListings({ type: "my-listings", username: "dady" });
+console.log(myListings);
+const myBids = await fetchListings({ type: "my-bids", username: "dady" });
+console.log(myBids);
+const myCollection = await fetchListings({ type: "my-collection", username: "dady" });
+console.log(myCollection);
+const listingId = await fetchListings({ type: "single-listing", listingId: "93067ed0-cc15-43bb-9e71-f71974b0f6eb" });
+console.log(listingId);
+const searchResults = await fetchListings({ type: "search", query: "modern" });
+console.log(searchResults);
