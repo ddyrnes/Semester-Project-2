@@ -16,9 +16,6 @@ export async function loadAuctionCardTemplate() {
     document.body.insertAdjacentHTML("beforeend", templateText);
 
     console.log("Template manually inserted into the DOM.");
-
-    // console.log("🔍 Checking document for #auction-card-template...");
-    // console.log("🔍 Template Found:", document.querySelector("#auction-card-template"));
   } catch (error) {
     console.error("❌ Error loading auction card template:", error);
   }

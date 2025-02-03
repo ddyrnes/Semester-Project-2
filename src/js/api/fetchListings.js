@@ -55,8 +55,9 @@ export async function fetchListings({ type, username = "", listingId = "", query
         url = LISTINGS.SEARCH(query);
         break;
       case "all-listings":
-        url = `${LISTINGS.ALL}?_active=true`; // Fetch only active auctions
+        url = `${LISTINGS.ALL}?_active=true&_seller=true`; // ✅ Fetch active listings WITH seller data
         break;
+
       default:
         throw new Error(`Invalid listing type: ${type}`);
     }

@@ -1,35 +1,40 @@
 <template id="auction-card-template">
-  <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
+  <div class="w-[300px] h-[750px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
     <img src="" alt="Auction Image" class="auction-image w-[300px] h-[300px] object-cover rounded-t-md" />
-    <div class="flex flex-col flex-1 p-6 gap-4 h-full">
-      <h3 class="auction-title text-h3 font-extrabold"></h3>
 
-      <div class="seller-info space-y-1 hidden">
-        <p class="tag">Seller</p>
-        <div class="flex gap-2 items-center">
-          <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-          <p class="auction-seller number"></p>
-        </div>
+    <div class="flex flex-col flex-1 p-6 gap-4">
+      <div class="min-h-[60px] flex flex-col justify-center">
+        <h3 class="auction-title text-h3 font-extrabold truncate">Auction Title</h3>
+        <hr class="border-t border-gray-300 w-full" />
       </div>
 
-      <div class="space-y-1">
-        <p class="tag text-blue-600">Description:</p>
-        <p class="auction-description text-sm text-gray-600"></p>
+      <div class="seller-info flex items-center gap-2 min-h-[40px]">
+        <img src="/Icons/User.png" alt="Seller Avatar" class="w-6 h-6 auction-seller-avatar rounded-full" />
+        <p class="auction-seller number truncate">Seller Name</p>
       </div>
 
-      <div class="space-y-1">
-        <p class="auction-bid number"></p>
+      <div class="space-y-1 min-h-[100px]">
+        <p class="number">Description:</p>
+        <p class="auction-description text-sm text-gray-600 overflow-hidden">
+          Auction description goes here. This text is truncated if it overflows the fixed height.
+        </p>
       </div>
 
-      <div class="space-y-1">
+      <div class="space-y-1 min-h-[40px]">
+        <p class="auction-bid number">Bids: 0</p>
+      </div>
+
+      <div class="space-y-1 min-h-[50px]">
         <p class="tag">Auction ends in:</p>
-        <p class="auction-time number"></p>
+        <p class="auction-time number">Time Info</p>
       </div>
 
-      <button
-        class="auction-button w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-        View
-      </button>
+      <div class="mt-auto h-[40px]">
+        <button
+          class="auction-button w-full h-full flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
+          View
+        </button>
+      </div>
     </div>
   </div>
 </template>

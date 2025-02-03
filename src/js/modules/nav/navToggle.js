@@ -1,6 +1,5 @@
 import { getUserData } from "../profile/myProfile/storage";
 export function navToggle() {
-  console.log("test111111111111111111");
   const hamburgerBtn = document.querySelector("#hamburgerBtn");
   const mobileMenu = document.querySelector("#mobileMenu");
 

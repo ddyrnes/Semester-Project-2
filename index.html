@@ -8,13 +8,15 @@
 
     <title>Welcome To Auction House</title>
   </head>
-  <body class="bg-background flex flex-col w-screen align-middle">
+  <body class="bg-background flex flex-col w-screen">
     <!-- Navbar Container -->
     <nav class="bg-dark py-[16px] px-[24px] relative">
       <div class="flex justify-between items-center max-w-[1440px] mx-auto h-[30px] sm:h-[40px]">
         <!-- Logo -->
         <div class="h-full flex-none">
-          <img src="/Icons/logo.png" alt="Auction House Icon" class="h-full w-auto object-contain" />
+          <a href="/index.html">
+            <img src="/Icons/logo.png" alt="Auction House Icon" class="h-full w-auto object-contain" />
+          </a>
         </div>
 
         <!-- Total Balance (Desktop Only, Hidden by Default) -->
@@ -158,226 +160,25 @@
         </div>
       </section>
 
-      <section class="max-w-fit mx-auto bg-background py-[80px]">
-        <!-- Grid Container -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 bg-primaryText md:p[20px] p-[20px] max-w-full mx-auto">
-          <h2 class="text-dark col-span-full text-left">Auctions Ending Soon</h2>
-
-          <!-- Auction Card -->
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
+      <section class="w-full mx-auto bg-background py-[80px]">
+        <div class="w-full max-w-[1200px] mx-auto p-[20px] bg-primaryText rounded-md">
+          <h2 class="text-dark text-center mb-4">Auctions Ending Soon</h2>
+          <!-- Grid Container -->
+          <div class="flex justify-center">
+            <div id="auctions-container" class="inline-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-[10px]">
+              <p class="text-center col-span-full text-dark" id="auction-error">
+                Couldn't load auctions right now. Please try again later.
+              </p>
+              <!-- Auction cards will be dynamically inserted here -->
             </div>
           </div>
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="max-w-[980px] mx-auto bg-background py-[80px] flex justify-center">
-        <!-- Cards Container -->
-        <div class="inline-flex flex-wrap w-fit gap-6 justify-center bg-primaryText p-[10px] m-0">
-          <div class="flex w-full">
-            <h2 class="text-dark mb-6">Auctions Ending Soon</h2>
-          </div>
-
-          <!-- Auction Card  -->
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
-          </div>
-
-          <div class="w-[300px] h-[600px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
-            <img src="/Images/exampleImage.jpg" alt="Example" class="w-[300px] h-[300px] object-cover rounded-t-md" />
-            <div class="flex flex-col flex-1 p-4 justify-between h-full">
-              <h3 class="text-h3 font-extrabold">Example Description</h3>
-              <div class="space-y-1">
-                <p class="tag">Seller</p>
-                <div class="flex gap-2 items-center">
-                  <img src="/Icons/User.png" alt="User Icon" class="w-6 h-6" />
-                  <p class="number">Username</p>
-                </div>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Current Bid:</p>
-                <p class="number">$1119.00</p>
-              </div>
-              <div class="space-y-1">
-                <p class="tag">Auction ends in:</p>
-                <p class="number">0d 1h 12m</p>
-              </div>
-              <button
-                class="w-full h-[50px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
-                Browse All Auctions
-              </button>
-            </div>
+          <!-- "View All Auctions" Button -->
+          <div class="p-20 text-center flex justify-center">
+            <a
+              href="/pages/auctions.html"
+              class="w-[300px] h-[60px] flex justify-center items-center rounded-[2px] bg-primary text-primaryText px-8">
+              View All Auctions
+            </a>
           </div>
         </div>
       </section>
@@ -392,28 +193,25 @@
           <p>Back To Top</p>
         </div>
         <div class="flex flex-col justify-between gap-4">
-          <a href="/">
+          <a href="/index.html">
             <div class="flex flex-row items-center">
               <img src="/Icons/home.png" alt="Home Icon" />
               <p>Home</p>
             </div>
           </a>
-
-          <a href="/auctions">
+          <a href="/pages/auctions.html">
             <div class="flex flex-row items-center">
               <img src="/Icons/auctions.png" alt="Auctions Icon" />
               <p>Auctions</p>
             </div>
           </a>
-
-          <a href="/register">
+          <a href="/pages/register.html">
             <div class="flex flex-row items-center">
               <img src="/Icons/register.png" alt="Register Icon" />
               <p>Register</p>
             </div>
           </a>
-
-          <a href="/login">
+          <a href="/pages/login.html">
             <div class="flex flex-row items-center">
               <img src="/Icons/login.png" alt="Login Icon" />
               <p>Login</p>

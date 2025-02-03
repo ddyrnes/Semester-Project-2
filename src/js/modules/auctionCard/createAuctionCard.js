@@ -1,4 +1,4 @@
-export function createAuctionCard(auctionData, removeButton = false) {
+export function createAuctionCard(auctionData) {
   const template = document.querySelector("#auction-card-template");
 
   if (!template) {
@@ -9,15 +9,40 @@ export function createAuctionCard(auctionData, removeButton = false) {
   const card = template.content.cloneNode(true);
   const cardElement = card.querySelector("div");
 
+  // Title
   cardElement.querySelector(".auction-title").textContent = auctionData.title;
-  cardElement.querySelector(".auction-description").textContent = auctionData.description;
-  cardElement.querySelector(".auction-image").src = auctionData.media[0]?.url || "";
-  cardElement.querySelector(".auction-image").alt = auctionData.media[0]?.alt || "Auction Image";
+  console.log("Seller Data:", auctionData);
+
+  // Description (Limit to 100 characters)
+  const descriptionElement = cardElement.querySelector(".auction-description");
+  const maxDescriptionLength = 100;
+  const descriptionText = auctionData.description || "No description provided";
+  descriptionElement.textContent =
+    descriptionText.length > maxDescriptionLength
+      ? descriptionText.substring(0, maxDescriptionLength) + "..."
+      : descriptionText;
+
+  // Image
+  const imageElement = cardElement.querySelector(".auction-image");
+  imageElement.src = auctionData.media[0]?.url || "/Icons/Placeholder.png"; // Default if no image
+  imageElement.alt = auctionData.media[0]?.alt || "Auction Image";
+
+  // Bids
   cardElement.querySelector(".auction-bid").textContent = `Bids: ${auctionData._count.bids}`;
+
+  // Auction End Time
   cardElement.querySelector(".auction-time").textContent = `Ends: ${new Date(auctionData.endsAt).toLocaleString()}`;
 
-  if (removeButton) {
-    cardElement.querySelector(".auction-button")?.remove();
+  // ✅ Seller Data
+  const sellerNameElement = cardElement.querySelector(".auction-seller");
+  const sellerAvatarElement = cardElement.querySelector(".auction-seller-avatar");
+
+  if (auctionData.seller) {
+    sellerNameElement.textContent = auctionData.seller.name || "Unknown Seller";
+    sellerAvatarElement.src = auctionData.seller.avatar?.url || "/Icons/User.png"; // Default icon if no avatar
+    sellerAvatarElement.alt = auctionData.seller.name || "Seller Avatar";
+  } else {
+    sellerNameElement.textContent = "Unknown Seller";
   }
 
   return cardElement;
