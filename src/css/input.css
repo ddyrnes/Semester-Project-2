@@ -37,6 +37,9 @@
   .links {
     @apply text-menu font-semibold;
   }
+  .nav-link {
+    @apply text-menu font-semibold;
+  }
 
   label,
   .tag {

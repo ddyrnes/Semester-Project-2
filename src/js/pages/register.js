@@ -1,3 +1,4 @@
+import "../modules/nav/nav.js";
 import { handleRegister } from "../auth/registerUser";
 
 document.addEventListener("DOMContentLoaded", () => {

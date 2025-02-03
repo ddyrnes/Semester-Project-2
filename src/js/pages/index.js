@@ -1,3 +1,5 @@
+import "../modules/nav/nav.js";
+
 // Will delete before finished product. Checking if user is logged in
 document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("user"));

@@ -1,14 +1,5 @@
 export function logout() {
   localStorage.removeItem("accessToken");
   localStorage.removeItem("user");
+  window.location.reload();
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const logoutButton = document.querySelector("#logoutBtn");
-
-  if (logoutButton) {
-    logoutButton.addEventListener("click", () => {
-      logout();
-      window.location.href = "/pages/login.html";
-    });
-  }
-});

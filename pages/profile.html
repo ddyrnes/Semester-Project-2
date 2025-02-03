@@ -9,32 +9,118 @@
   </head>
   <body class="bg-background flex flex-col w-screen align-middle">
     <!-- Navbar -->
-    <nav class="bg-dark p-[16px]">
-      <div class="flex flex-row justify-between container">
-        <div>
-          <img src="/Icons/Auction House Icon.png" alt="Auction House Icon" />
+    <nav class="bg-dark py-[16px] px-[24px] relative">
+      <div class="flex justify-between items-center max-w-[1440px] mx-auto h-[30px] sm:h-[40px]">
+        <!-- Logo -->
+        <div class="h-full flex-none">
+          <img src="/Icons/logo.png" alt="Auction House Icon" class="h-full w-auto object-contain" />
         </div>
-        <div>
-          <p class="tag">Total Balance</p>
-          <p class="number">$1331</p>
+
+        <!-- Total Balance (Desktop Only, Hidden by Default) -->
+        <div id="totalBalanceDesktop" class="lg:flex flex-col md:flex-1 items-center justify-center">
+          <div id="totalBalanceContent" class="hidden">
+            <p class="tag">Total Balance</p>
+            <p id="desktopBalance" class="number">$0</p>
+          </div>
         </div>
-        <div class="flex space-x-6 py-[8px]">
-          <a href="/" class="flex items-center space-x-2">
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex flex-shrink-0 justify-end gap-4">
+          <a
+            href="/index.html"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
             <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
             <p>Home</p>
           </a>
-          <a href="/auctions" class="flex items-center space-x-2">
+          <a
+            href="/pages/auctions.html"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
             <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
             <p>Auctions</p>
           </a>
-          <a href="/register" class="flex items-center space-x-2">
+          <a
+            href="/pages/register.html"
+            id="registerLink"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
             <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
             <p>Register</p>
           </a>
-          <a href="/login" class="flex items-center space-x-2">
+          <a
+            href="/pages/login.html"
+            id="loginLink"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
             <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
             <p>Login</p>
           </a>
+          <a
+            href="/pages/profile.html"
+            id="profileLink"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200 hidden">
+            <img id="navbarAvatar" src="/Icons/profile.png" alt="Profile Icon" class="w-6 h-6 rounded-full" />
+            <p id="navbarUsername" class="max-w-[120px] overflow-hidden whitespace-nowrap truncate">Profile</p>
+          </a>
+
+          <button
+            id="logoutBtn"
+            class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200 hidden">
+            <img src="/Icons/logout.png" alt="Logout Icon" class="w-6 h-6" />
+            <p>Logout</p>
+          </button>
+        </div>
+
+        <!-- Hamburger Menu Button (Visible Below 1024px) -->
+        <button id="hamburgerBtn" class="lg:hidden flex-1 relative">
+          <img src="/Icons/hamburger.png" alt="Menu Icon" class="w-8 h-8 ml-auto" />
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown (Absolute Overlay) -->
+      <div id="mobileMenu" class="hidden absolute top-full right-0 p-[40px] bg-dark shadow-lg flex-col z-50">
+        <a
+          href="/index.html"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
+          <img src="/Icons/home.png" alt="Home Icon" class="w-6 h-6" />
+          <p>Home</p>
+        </a>
+        <a
+          href="/pages/auctions.html"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
+          <img src="/Icons/auctions.png" alt="Auctions Icon" class="w-6 h-6" />
+          <p>Auctions</p>
+        </a>
+        <a
+          href="/pages/register.html"
+          id="registerLinkMobile"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
+          <img src="/Icons/register.png" alt="Register Icon" class="w-6 h-6" />
+          <p>Register</p>
+        </a>
+        <a
+          href="/pages/login.html"
+          id="loginLinkMobile"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200">
+          <img src="/Icons/login.png" alt="Login Icon" class="w-6 h-6" />
+          <p>Login</p>
+        </a>
+        <a
+          href="/pages/profile.html"
+          id="profileLinkMobile"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200 hidden">
+          <img id="navbarAvatarMobile" src="/Icons/profile.png" alt="Profile Icon" class="w-6 h-6 rounded-full" />
+          <p id="navbarUsernameMobile" class="max-w-[120px] overflow-hidden whitespace-nowrap truncate">Profile</p>
+        </a>
+
+        <button
+          id="logoutBtnMobile"
+          class="nav-link flex items-center gap-2 p-2 border border-transparent hover:border-primary rounded-[2px] transition-colors duration-200 hidden">
+          <img src="/Icons/logout.png" alt="Logout Icon" class="w-6 h-6" />
+          <p>Logout</p>
+        </button>
+
+        <!-- Total Balance (Mobile Only, for logged-in users) -->
+        <div id="totalBalanceMobile" class="mt-4 border-t border-gray-700 pt-4 p-2 hidden">
+          <p class="tag">Total Balance</p>
+          <p id="mobileBalance" class="number text-lg font-bold">$0</p>
         </div>
       </div>
     </nav>
