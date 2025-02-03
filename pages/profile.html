@@ -188,8 +188,15 @@
         <div id="my-collection" class="tab-content hidden">
           <p>My Collection...</p>
         </div>
-        <div id="my-current-auctions" class="tab-content hidden">
-          <p>My Current Auctions...</p>
+        <div id="my-current-auctions" class="tab-content bg-primaryText w-full p-6 py-12 hidden">
+          <div class="w-full text-center mb-6">
+            <h1 class="text-2xl font-bold text-dark mb-4">My Current Auctions</h1>
+          </div>
+
+          <div id="currentAuctionsContainer" class="grid-container">
+            <!-- Auction cards will be dynamically inserted here -->
+            <p id="noAuctionsMessage" class="text-dark text-center hidden">You have no active auctions.</p>
+          </div>
         </div>
       </section>
     </main>

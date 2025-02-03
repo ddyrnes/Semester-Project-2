@@ -1,6 +1,14 @@
 import { LISTINGS } from "../../../api/apiEndpoints.js";
 import { getUserData } from "../myProfile/storage";
 import { API_KEY } from "../../../api/apiKey.js";
+import { loadMyCurrentAuctions } from "../myCurrentAuctions/myCurrentAuctions.js";
+
+// Refactor before final commit
+// Refactor before final commit
+// Refactor before final commit
+// Refactor before final commit
+// Refactor before final commit
+// Refactor before final commit
 
 export async function handleCreateAuction(event) {
   event.preventDefault();
@@ -96,6 +104,10 @@ export async function handleCreateAuction(event) {
     }
 
     alert("Auction successfully created!");
+
+    // Reloads my current auctions in "my current auctions" to display the newly created auction
+    loadMyCurrentAuctions();
+
     // window.location.reload();
     titleInput.value = "";
     descriptionInput.value = "";
