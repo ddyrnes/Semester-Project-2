@@ -146,16 +146,21 @@
             </p>
           </div>
           <div class="flex justify-between gap-10 flex-col md:flex-row">
-            <button
-              class="flex w-fill sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] bg-primary">
-              <img src="/Icons/register.png" alt="Register Icon" />
-              <p>Register Now</p>
-            </button>
-            <button
-              class="cta flex w-fill sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] border-2 border-primary">
-              <img src="/Icons/auctions.png" alt="Auctions icon" />
-              <p>Browse Auctions</p>
-            </button>
+            <a href="/pages/register.html">
+              <button
+                class="flex w-full sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] bg-primary">
+                <img src="/Icons/register.png" alt="Register Icon" />
+                <p>Register Now</p>
+              </button>
+            </a>
+
+            <a href="/pages/auctions.html">
+              <button
+                class="cta flex w-full sm:w-auto h-[50px] px-[54px] py-[10px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[2px] border-2 border-primary">
+                <img src="/Icons/auctions.png" alt="Auctions icon" />
+                <p>Browse Auctions</p>
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -188,10 +193,10 @@
         <div>
           <img src="/Icons/logo.png" alt="Auction House Icon" class="h-[40px]" />
         </div>
-        <div class="flex flex-col items-center links">
+        <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
           <p class="text-2xl">&#11014;</p>
           <p>Back To Top</p>
-        </div>
+        </button>
         <div class="flex flex-col justify-between gap-4">
           <a href="/index.html">
             <div class="flex flex-row items-center">

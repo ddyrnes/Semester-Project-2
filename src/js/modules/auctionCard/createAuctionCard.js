@@ -11,7 +11,6 @@ export function createAuctionCard(auctionData) {
 
   // Title
   cardElement.querySelector(".auction-title").textContent = auctionData.title;
-  console.log("Seller Data:", auctionData);
 
   // Description (Limit to 100 characters)
   const descriptionElement = cardElement.querySelector(".auction-description");

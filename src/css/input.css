@@ -12,6 +12,9 @@
   body {
     @apply text-body font-medium;
   }
+  main {
+    min-height: 100vh;
+  }
 
   h1 {
     @apply text-h1 font-black;

@@ -3,6 +3,7 @@ import { navHighlight } from "./navHighlight";
 import { navUserExist } from "./navUserExist";
 import { logout } from "../logout";
 import { updateNavAvatar } from "./updateNavAvatar";
+import { scrollToTop } from "./footerScroll";
 
 document.addEventListener("DOMContentLoaded", () => {
   navUserExist();
@@ -15,4 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutButtons.forEach((button) => {
     button.addEventListener("click", logout);
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopButton = document.querySelector("#backToTopBtn");
+  if (backToTopButton) {
+    backToTopButton.addEventListener("click", scrollToTop);
+  }
 });
