@@ -24,7 +24,6 @@ export async function fetchListings({ type, username = "", listingId = "", query
 
     let url = LISTINGS.ALL; // Default: fetch all listings
     let requiresAuth = false; // Tracks if auth headers are needed
-
     switch (type) {
       case "my-listings":
         if (!username) throw new Error("Username is required for fetching user listings.");
@@ -46,10 +45,14 @@ export async function fetchListings({ type, username = "", listingId = "", query
         url = PROFILES.WINS(username);
         requiresAuth = true;
         break;
-      case "single-listing":
+      case "single-listing": {
         if (!listingId) throw new Error("Listing ID is required for fetching a single listing.");
         url = LISTINGS.SINGLE(listingId);
+        const queryParams = query ? `?${query}` : "";
+        url += queryParams;
         break;
+      }
+
       case "search":
         if (!query) throw new Error("A search query is required.");
         url = LISTINGS.SEARCH(query);

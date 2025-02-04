@@ -43,6 +43,11 @@ export function createAuctionCard(auctionData) {
   } else {
     sellerNameElement.textContent = "Unknown Seller";
   }
-
+  const viewButton = cardElement.querySelector(".auction-button");
+  if (viewButton) {
+    viewButton.addEventListener("click", () => {
+      window.location.href = `/pages/specific-auction.html?id=${auctionData.id}`;
+    });
+  }
   return cardElement;
 }

@@ -3,9 +3,7 @@ export function getUserData() {
   const userString = localStorage.getItem("user");
   const accessToken = localStorage.getItem("accessToken");
 
-  // If either value is missing, redirect to login.
   if (!userString || !accessToken) {
-    // window.location.href = "/pages/login.html";
     return null;
   }
 
@@ -14,7 +12,6 @@ export function getUserData() {
     return { ...userData, accessToken }; // Return merged user data with token
   } catch (error) {
     console.error("Failed to parse user data:", error);
-    // window.location.href = "/pages/login.html";
     return null;
   }
 }
