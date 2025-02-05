@@ -22,7 +22,7 @@ export function createAuctionCard(auctionData, isMyAuction = false) {
 
   // Image
   const imageElement = cardElement.querySelector(".auction-image");
-  imageElement.src = auctionData.media[0]?.url || "/images/Placeholder.png"; // Default if no image
+  imageElement.src = auctionData.media[0]?.url || "/images/placeholder.jpg"; // Default if no image
   imageElement.alt = auctionData.media[0]?.alt || "Auction Image";
 
   // Bids
