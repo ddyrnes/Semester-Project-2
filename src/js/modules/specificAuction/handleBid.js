@@ -4,6 +4,25 @@ import { makeRequest } from "./makeRequest.js";
 import { showFeedback } from "./showFeedback.js";
 import { getAuctionIdFromURL } from "./getAuctionIdFromURL.js";
 
+/**
+ * Handles the bid placement process for an auction.
+ *
+ * This function performs the following steps:
+ * 1. Retrieves the bid amount input from the DOM and validates it.
+ * 2. Compares the entered bid against the current highest bid and shows feedback if the bid is too low.
+ * 3. Checks if the user is authenticated by retrieving user data from storage.
+ * 4. Constructs the API URL using the auction ID extracted from the current URL.
+ * 5. Sends a POST request to place the bid with the specified amount.
+ * 6. Upon a successful bid, updates the DOM elements for highest bid, highest bidder, and total bid count.
+ * 7. Provides appropriate feedback messages for both success and error conditions.
+ *
+ * @async
+ * @function handleBid
+ * @returns {Promise<void>} A promise that resolves when the bid handling process completes.
+ *
+ * @throws {Error} If the bid amount is invalid, the user is not authenticated, or the request fails due to insufficient credits.
+ */
+
 export async function handleBid() {
   const bidAmountInput = document.getElementById("bid-amount");
   if (!bidAmountInput) return;

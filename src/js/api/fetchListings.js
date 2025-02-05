@@ -1,23 +1,42 @@
-// fetchListings - A reusable function to fetch auction listings.
-//
-// This function supports fetching:
-// - All active listings
-// - Listings created by a user (Requires authentication)
-// - Listings a user has bid on (Requires authentication)
-// - Listings a user has won (Requires authentication)
-// - A single listing by ID
-// - Search results based on a query
-//
-// Authentication:
-// - Endpoints related to a specific user require an access token and an API key.
-// - The API key is imported from /apiKey
-// - The access token is stored in localStorage if the user is logged in.
-//
-// Usage examples can be found at the bottom of this file.
-
 import { LISTINGS, PROFILES } from "./apiEndpoints";
 import { API_KEY } from "./apiKey";
 
+/**
+ * Fetches auction listings based on the specified type.
+ *
+ * This function supports fetching:
+ * - All active listings
+ * - Listings created by a user (Requires authentication)
+ * - Listings a user has bid on (Requires authentication)
+ * - Listings a user has won (Requires authentication)
+ * - A single listing by ID
+ * - Search results based on a query
+ *
+ * **Authentication:**
+ * Endpoints related to a specific user require an access token and an API key.
+ * - The API key is imported from `/apiKey`
+ * - The access token is stored in localStorage if the user is logged in.
+ *
+ * @async
+ * @function fetchListings
+ * @param {Object} options - Options for fetching listings.
+ * @param {string} options.type - The type of listing to fetch. Allowed values:
+ *   - `"my-listings"`: User's own listings (requires `username`).
+ *   - `"my-bids"`: Listings the user has bid on (requires `username`).
+ *   - `"my-current-auctions"`: Active auctions for the user (requires `username`).
+ *   - `"my-collection"`: Listings the user has won (requires `username`).
+ *   - `"single-listing"`: A single listing by ID (requires `listingId`, optional `query`).
+ *   - `"search"`: Search listings based on a query (requires `query`).
+ *   - `"all-listings"`: Fetch all active listings including seller details.
+ * @param {string} [options.username=""] - Username for user-specific listings.
+ * @param {string} [options.listingId=""] - Listing ID for fetching a single listing.
+ * @param {string} [options.query=""] - Search query or additional query parameters.
+ * @returns {Promise<Object>} The JSON response from the fetch call.
+ * @throws {Error} Throws an error if:
+ *   - A required parameter is missing.
+ *   - Authentication is required but no access token is found.
+ *   - The fetch response is not OK (e.g., bad request, unauthorized, etc.).
+ */
 export async function fetchListings({ type, username = "", listingId = "", query = "" }) {
   if (!type) throw new Error("A 'type' parameter is required.");
 
@@ -93,23 +112,3 @@ export async function fetchListings({ type, username = "", listingId = "", query
 
   return await response.json();
 }
-
-// Usage Examples
-
-// Fetch All Active Listings
-// const listings = await fetchListings({ type: "all-listings" });
-
-// Fetch My Listings (Requires Authentication)
-// const myListings = await fetchListings({ type: "my-listings", username: "myUsername" });
-
-// Fetch My Bids (Requires Authentication)
-// const myBids = await fetchListings({ type: "my-bids", username: "myUsername" });
-
-// Fetch My Won Auctions (Requires Authentication)
-// const myCollection = await fetchListings({ type: "my-collection", username: "myUsername" });
-
-// Fetch a Single Listing
-// const listing = await fetchListings({ type: "single-listing", listingId: "12345" });
-
-// Search Listings
-// const searchResults = await fetchListings({ type: "search", query: "vintage bike" });
