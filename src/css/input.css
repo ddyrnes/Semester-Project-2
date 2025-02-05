@@ -11,6 +11,7 @@
   }
   body {
     @apply text-body font-medium;
+    @apply overflow-x-hidden;
   }
   main {
     min-height: 100vh;
