@@ -14,11 +14,23 @@ export function renderSpecificAuction(auction) {
   const totalBids = auction.bids?.length || 0;
   document.querySelector("#total-bids").textContent = totalBids;
 
-  let highestBidAmount = "No bids yet";
+  // Initialize highest bid and bidder name to avoid reference errors
+  let highestBidAmount = 0;
+  let highestBidderName = "No bids yet";
+
   if (auction.bids && auction.bids.length > 0) {
     highestBidAmount = Math.max(...auction.bids.map((bid) => bid.amount));
+
+    // Find the bid object that matches the highest amount
+    const highestBidObject = auction.bids.find((bid) => bid.amount === highestBidAmount);
+
+    // Get bidder's name or default to "Unknown"
+    highestBidderName = highestBidObject?.bidder?.name || "Unknown";
   }
+
+  // Update the UI elements
   document.querySelector("#current-bid").textContent = highestBidAmount;
+  document.querySelector("#highest-bidder").textContent = highestBidderName;
 
   // Handle Media (Auction Image)
   const auctionImage = document.querySelector("#auction-image");

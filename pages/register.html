@@ -127,11 +127,6 @@
     </nav>
 
     <main>
-      <div class="flex gap-[4px] p-8">
-        <img src="/Icons/backArrow.png" alt="Go Back Arrow" class="h-[20px]" />
-        <p class="text-dark links underline">Back To Home Page</p>
-      </div>
-
       <section>
         <div class="w-full h-fit md:w-[600px] mx-auto bg-primaryText text-dark flex flex-col p-[80px] items-center">
           <div class="w-[260px] mb-6">
@@ -205,5 +200,30 @@
         </div>
       </section>
     </main>
+    <footer class="bg-dark">
+      <div class="container flex flex-1 h-[180px] items-center justify-between">
+        <div class="flex-1 flex justify-start">
+          <a href="../index.html">
+            <img src="/Icons/logo.png" alt="Auction House Icon" class="h-[40px]" />
+          </a>
+        </div>
+        <div class="flex-1 hidden md:flex justify-center">
+          <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
+            <p class="text-2xl">&#11014;</p>
+            <p>Back To Top</p>
+          </button>
+        </div>
+        <div class="flex-1 flex justify-end md:hidden">
+          <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
+            <p class="text-2xl">&#11014;</p>
+            <p>Back To Top</p>
+          </button>
+        </div>
+        <div class="hidden md:flex flex-1"></div>
+      </div>
+      <div class="justify-center flex bg-black tag p-2">
+        <p>&copy; 2025 Daniel Dyrnes. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

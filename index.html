@@ -188,42 +188,27 @@
       </section>
     </main>
     <footer class="bg-dark">
-      <div class="flex flex-row justify-between container flex-1 h-[180px] items-center">
-        <div>
-          <img src="/Icons/logo.png" alt="Auction House Icon" class="h-[40px]" />
-        </div>
-        <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
-          <p class="text-2xl">&#11014;</p>
-          <p>Back To Top</p>
-        </button>
-        <div class="flex flex-col justify-between gap-4">
+      <div class="container flex flex-1 h-[180px] items-center justify-between">
+        <div class="flex-1 flex justify-start">
           <a href="/index.html">
-            <div class="flex flex-row items-center">
-              <img src="/Icons/home.png" alt="Home Icon" />
-              <p>Home</p>
-            </div>
-          </a>
-          <a href="/pages/auctions.html">
-            <div class="flex flex-row items-center">
-              <img src="/Icons/auctions.png" alt="Auctions Icon" />
-              <p>Auctions</p>
-            </div>
-          </a>
-          <a href="/pages/register.html">
-            <div class="flex flex-row items-center">
-              <img src="/Icons/register.png" alt="Register Icon" />
-              <p>Register</p>
-            </div>
-          </a>
-          <a href="/pages/login.html">
-            <div class="flex flex-row items-center">
-              <img src="/Icons/login.png" alt="Login Icon" />
-              <p>Login</p>
-            </div>
+            <img src="/Icons/logo.png" alt="Auction House Icon" class="h-[40px]" />
           </a>
         </div>
+        <div class="flex-1 hidden md:flex justify-center">
+          <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
+            <p class="text-2xl">&#11014;</p>
+            <p>Back To Top</p>
+          </button>
+        </div>
+        <div class="flex-1 flex justify-end md:hidden">
+          <button id="backToTopBtn" class="flex flex-col items-center cursor-pointer p-2">
+            <p class="text-2xl">&#11014;</p>
+            <p>Back To Top</p>
+          </button>
+        </div>
+        <div class="hidden md:flex flex-1"></div>
       </div>
-      <div class="justify-center flex bg-black tag">
+      <div class="justify-center flex bg-black tag p-2">
         <p>&copy; 2025 Daniel Dyrnes. All rights reserved.</p>
       </div>
     </footer>

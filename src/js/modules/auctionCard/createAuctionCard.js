@@ -1,8 +1,7 @@
-export function createAuctionCard(auctionData) {
+export function createAuctionCard(auctionData, isMyAuction = false) {
   const template = document.querySelector("#auction-card-template");
 
   if (!template) {
-    console.error("❌ Template #auction-card-template not found.");
     return null;
   }
 
@@ -32,22 +31,25 @@ export function createAuctionCard(auctionData) {
   // Auction End Time
   cardElement.querySelector(".auction-time").textContent = `Ends: ${new Date(auctionData.endsAt).toLocaleString()}`;
 
-  // ✅ Seller Data
-  const sellerNameElement = cardElement.querySelector(".auction-seller");
-  const sellerAvatarElement = cardElement.querySelector(".auction-seller-avatar");
+  // Seller Data (Hide if it's "My Auctions")
+  const sellerInfoElement = cardElement.querySelector(".seller-info");
 
-  if (auctionData.seller) {
-    sellerNameElement.textContent = auctionData.seller.name || "Unknown Seller";
+  if (isMyAuction) {
+    sellerInfoElement.style.display = "none";
+  } else if (auctionData.seller) {
+    cardElement.querySelector(".auction-seller").textContent = auctionData.seller.name || "Unknown Seller";
+    const sellerAvatarElement = cardElement.querySelector(".auction-seller-avatar");
     sellerAvatarElement.src = auctionData.seller.avatar?.url || "/Icons/User.png"; // Default icon if no avatar
     sellerAvatarElement.alt = auctionData.seller.name || "Seller Avatar";
-  } else {
-    sellerNameElement.textContent = "Unknown Seller";
   }
+
+  // View Button
   const viewButton = cardElement.querySelector(".auction-button");
   if (viewButton) {
     viewButton.addEventListener("click", () => {
       window.location.href = `/pages/specific-auction.html?id=${auctionData.id}`;
     });
   }
+
   return cardElement;
 }
