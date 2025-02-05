@@ -1,6 +1,6 @@
 export async function loadAuctionCardTemplate() {
   try {
-    const response = await fetch("/src/js/modules/auctionCard/auctionCardTemplate.html");
+    const response = await fetch("/auctionCardTemplate.html");
 
     if (!response.ok) {
       throw new Error(`❌ Failed to load template: ${response.status} ${response.statusText}`);
