@@ -69,5 +69,3 @@ This will:
 ## Author
 
 **Daniel Dyrnes**
-
-> > > > > > > development
