@@ -10,8 +10,7 @@ export function getUserData() {
   try {
     const userData = JSON.parse(userString);
     return { ...userData, accessToken }; // Return merged user data with token
-  } catch (error) {
-    console.error("Failed to parse user data:", error);
+  } catch {
     return null;
   }
 }

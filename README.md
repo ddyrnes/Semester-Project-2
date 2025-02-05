@@ -2,8 +2,6 @@
 
 ## Overview
 
-**Work in progress: Estimated Completion Date:** February 5, 2025
-
 A front-end project for an **auction website**, built with **HTML, Tailwind CSS, and JavaScript**, integrating with a provided backend API for **user authentication, auction listings, and bidding**.
 
 ## Features

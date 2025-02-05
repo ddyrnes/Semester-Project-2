@@ -13,8 +13,7 @@ export async function fetchSpecificAuction(auctionId) {
     }
 
     return response.data;
-  } catch (error) {
-    console.error("Error fetching auction:", error);
-    throw error;
+  } catch {
+    return;
   }
 }

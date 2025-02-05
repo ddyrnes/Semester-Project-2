@@ -55,7 +55,6 @@ export async function updateAvatar(event) {
     // Hide any previous error message
     avatarError.classList.add("hidden");
   } catch (error) {
-    console.error("❌ Error updating avatar:", error.message);
     avatarError.textContent = error.message;
     avatarError.classList.remove("hidden");
   }

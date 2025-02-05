@@ -45,11 +45,17 @@ export async function loadMyCollection() {
       const auctionCard = createAuctionCard(auction);
       if (!auctionCard) return;
 
+      // Remove auction end time
       const auctionEndContainer = auctionCard.querySelector("#auction-end-container");
       if (auctionEndContainer) auctionEndContainer.remove();
 
+      // Remove bid button
       const auctionBid = auctionCard.querySelector(".auction-bid");
       if (auctionBid) auctionBid.remove();
+
+      // Remove "View" button
+      const viewButton = auctionCard.querySelector(".auction-button");
+      if (viewButton) viewButton.remove();
 
       myCollectionContainer.appendChild(auctionCard);
     });

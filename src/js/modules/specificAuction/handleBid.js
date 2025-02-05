@@ -15,6 +15,9 @@ export async function handleBid() {
   }
 
   const highestBidElement = document.getElementById("current-bid");
+  const highestBidderElement = document.getElementById("highest-bidder");
+  const totalBidsElement = document.getElementById("total-bids");
+
   const highestBid =
     highestBidElement && highestBidElement.textContent !== "-" ? parseFloat(highestBidElement.textContent) : 0;
 
@@ -40,12 +43,21 @@ export async function handleBid() {
       "success",
     );
 
-    bidAmountInput.value = "";
+    if (highestBidElement) {
+      highestBidElement.textContent = bidAmount.toFixed(2);
+    }
 
-    setTimeout(() => {
-      location.reload();
-    }, 5000);
-  } catch (error) {
-    showFeedback(error.message || "❌ An error occurred while placing your bid. Please try again.", "error");
+    if (highestBidderElement) {
+      highestBidderElement.textContent = user.name;
+    }
+
+    if (totalBidsElement) {
+      let totalBids = parseInt(totalBidsElement.textContent) || 0;
+      totalBidsElement.textContent = totalBids + 1;
+    }
+
+    bidAmountInput.value = "";
+  } catch {
+    showFeedback("❌ You don't have enough credits to place this bid.", "error");
   }
 }

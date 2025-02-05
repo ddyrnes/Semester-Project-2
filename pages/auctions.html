@@ -6,7 +6,7 @@
     <script type="module" src="/src/js/pages/auctions.js"></script>
     <link rel="stylesheet" href="/src/css/input.css" />
 
-    <title>Welcome To Auction House</title>
+    <title>Auctions | Auction House</title>
   </head>
   <body class="bg-background flex flex-col w-screen">
     <!-- Navbar Container -->
@@ -162,9 +162,8 @@
             <!-- Grid Container -->
             <div class="flex justify-center mt-6 w-full">
               <div id="auctions-container" class="inline-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-[10px]">
-                <p class="text-center col-span-full text-dark" id="auction-error">
-                  Couldn't load auctions right now. Please try again later.
-                </p>
+                <p class="text-center col-span-full text-dark" id="auction-error">Loading auctions...</p>
+
                 <!-- Auction cards will be dynamically inserted here -->
               </div>
             </div>
