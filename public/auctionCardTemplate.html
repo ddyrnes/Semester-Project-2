@@ -1,0 +1,49 @@
+<template id="auction-card-template">
+  <div class="w-[300px] h-[750px] rounded-[2px] shadow-lg text-dark bg-primaryText flex flex-col">
+    <img src="" alt="Auction Image" class="auction-image w-[300px] h-[300px] object-cover rounded-t-md" />
+
+    <div class="flex flex-col flex-1 p-6 gap-4">
+      <!-- Auction Title -->
+      <div class="min-h-[60px] flex flex-col justify-center">
+        <h3 class="auction-title text-h3 font-extrabold truncate">Auction Title</h3>
+        <hr class="border-t border-gray-300 w-full" />
+      </div>
+
+      <!-- Seller Info -->
+      <div class="seller-info flex items-center gap-2 min-h-[40px]">
+        <img src="/Icons/User.png" alt="Seller Avatar" class="w-6 h-6 auction-seller-avatar rounded-full" />
+        <p class="auction-seller number truncate">Seller Name</p>
+      </div>
+
+      <!-- Description Section -->
+      <div class="space-y-1 min-h-[100px]">
+        <p class="number">Description:</p>
+        <p class="auction-description text-sm text-gray-600 overflow-hidden">
+          Auction description goes here. This text is truncated if it overflows the fixed height.
+        </p>
+      </div>
+
+      <!-- Bid Info -->
+      <div class="space-y-1 min-h-[40px]">
+        <p class="auction-bid number">
+          Bids:
+          <span class="bid-count">0</span>
+        </p>
+      </div>
+
+      <!-- Auction End Time -->
+      <div id="auction-end-container" class="space-y-1 min-h-[50px]">
+        <p class="tag">Auction Ends At:</p>
+        <p class="auction-time number">Time Info</p>
+      </div>
+
+      <!-- View Auction Button -->
+      <div class="mt-auto h-[40px]">
+        <button
+          class="auction-button w-full h-full flex justify-center items-center rounded-[2px] bg-primary text-primaryText">
+          View
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

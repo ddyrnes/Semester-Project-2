@@ -1,0 +1,21 @@
+export function navHighlight() {
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const currentPath = window.location.pathname.split("/").pop(); // Get current file name
+
+  navLinks.forEach((link) => {
+    // Ignore logout button
+    if (link.tagName !== "A") return;
+
+    const href = link.getAttribute("href");
+    if (!href) return; // Skip if href is missing
+
+    const linkPath = href.split("/").pop(); // Get file name from href
+
+    if (currentPath === linkPath || (currentPath === "" && linkPath === "index.html")) {
+      link.classList.add("bg-primary", "text-white", "rounded-[2px]");
+    } else {
+      link.classList.remove("bg-primary", "text-white", "rounded-[2px]");
+    }
+  });
+}
