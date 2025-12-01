@@ -8,10 +8,10 @@ A front-end project for an **auction website**, built with **HTML, Tailwind CSS,
 
 ## Features
 
-- 🏷️ **Browse & Search Auctions** – Discover and filter available listings.
-- 🔑 **User Authentication** – Register and log in to manage auctions.
-- 📢 **Create & Manage Listings** – List new items for auction and edit existing ones.
-- ⚡ **Real-Time Bidding** – Place bids and track auction activity.
+-  **Browse & Search Auctions** – Discover and filter available listings.
+-  **User Authentication** – Register and log in to manage auctions.
+-  **Create & Manage Listings** – List new items for auction and edit existing ones.
+-  **Real-Time Bidding** – Place bids and track auction activity.
 
 ## Tech Stack
 
