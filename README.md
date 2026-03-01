@@ -1,71 +1,83 @@
 # Noroff Auction House Website
 
-🚀 **Live Demo:** [Visit the Website](https://dd2-semester-project.netlify.app/)
+A front-end auction platform built for Semester Project 2, where users can register, create listings, and place bids.
 
-## Overview
+## Links
 
-A front-end project for an **auction website**, built with **HTML, Tailwind CSS, and JavaScript**, integrating with a provided backend API for **user authentication, auction listings, and bidding**.
+- Live Site: https://dd2-semester-project.netlify.app/
+- GitHub Repo: https://github.com/ddyrnes/Semester-Project-2
+
+## Project Description
+
+This project is an auction website built with HTML, Tailwind CSS, and JavaScript.  
+It integrates with the Noroff API for authentication, listings, and bidding functionality.
 
 ## Features
 
--  **Browse & Search Auctions** – Discover and filter available listings.
--  **User Authentication** – Register and log in to manage auctions.
--  **Create & Manage Listings** – List new items for auction and edit existing ones.
--  **Real-Time Bidding** – Place bids and track auction activity.
+- Browse and search auction listings
+- User registration and login
+- Create and manage auction listings
+- Place bids and track auction activity
+- Responsive design for multiple screen sizes
 
 ## Tech Stack
 
-- **HTML**
-- **Tailwind CSS** `@3.4.17`
-- **JavaScript**
-- **Node.js & npm** (for development tools)
-- **Vite** (for environment variables & fast builds)
-- **Husky & ESLint** (for code quality and Git hooks)
+- HTML
+- Tailwind CSS
+- JavaScript
+- Vite
+- ESLint
+- Husky
 
-## Setup
+## Installation
 
-### 1. Clone the Repository
+1. Clone the repository:
 
-```sh
-git clone https://github.com/yourusername/auction-website.git
+```bash
+git clone https://github.com/ddyrnes/Semester-Project-2.git
+cd Semester-Project-2
 ```
 
-```sh
-cd auction-website
-```
+2. Install dependencies:
 
-### 2. Install Dependencies
-
-```sh
+```bash
 npm install
 ```
 
-### 3. Set Up API Key
+3. Create a `.env` file in the root:
 
-This project requires an API key to interact with the backend. You need to create a .env file in the root of the project and add your API key.
-
-1. Create a new file named .env in the project root.
-2. Add the following line inside it:
-
-```makefile
+```env
 VITE_API_KEY=your_api_key_here
 ```
 
-3. Save the file
-   Note: Never commit your .env file to Git. It is already included in .gitignore.
+4. Start the development server:
 
-### 4. Start Development Server (Vite + Tailwind)
-
-```sh
+```bash
 npm run start
 ```
 
-This will:
+5. Open in browser:
 
-- **Start Tailwind CSS in watch mode.**
-- **Start Vite for local development.**
-- **Your project will be accessible at: http://localhost:5173**
+```text
+http://localhost:5173
+```
+
+## Available Scripts
+
+- `npm run start` - Start local development
+- `npm run build` - Build for production
+- `npm run lint` - Run linter (if configured)
+
+## Environment Variables
+
+- `VITE_API_KEY` is required for authenticated requests.
+- Never commit `.env` files to source control.
+
+## Screenshots
+
+![Auction House homepage](https://raw.githubusercontent.com/ddyrnes/portfolio/main/images/auctionhouse1.png)
+![Auction House listings](https://raw.githubusercontent.com/ddyrnes/portfolio/main/images/auctionhouse2.png)
 
 ## Author
 
-**Daniel Dyrnes**
+Daniel Dyrnes
